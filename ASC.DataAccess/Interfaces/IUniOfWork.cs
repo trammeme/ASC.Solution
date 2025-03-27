@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ASC.DataAccess
+namespace ASC.DataAccess.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

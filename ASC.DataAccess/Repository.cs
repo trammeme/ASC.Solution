@@ -6,13 +6,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ASC.DataAccess.Interfaces;
+
 
 namespace ASC.DataAccess
 {
 
     public class Repository<T> : IRepository<T> where T : BaseEntity, new()
     {
-        private readonly DbContext dbContext;
+        private DbContext dbContext;
 
         public Repository(DbContext _dbContext)
         {
@@ -25,7 +27,7 @@ namespace ASC.DataAccess
             entity.CreatedDate = DateTime.UtcNow;
             entity.UpdatedDate = DateTime.UtcNow;
             var result = await dbContext.Set<T>().AddAsync(entity);
-            return result.Entity;
+            return result as T;
         }
 
         public void Update(T entity)
