@@ -1,4 +1,5 @@
-﻿using ASC.Model.BaseTypes;
+﻿using ASC.DataAccess.Interfaces;
+using ASC.Model.BaseTypes;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
